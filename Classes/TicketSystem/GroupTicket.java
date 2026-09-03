@@ -2,8 +2,8 @@ package Classes.TicketSystem;
 
 class GroupTicket extends Ticket{
 
-    protected GroupTicket(int pSitzplatz) {
-        super(pSitzplatz);
+    protected GroupTicket(int sitzplatz) {
+        super(sitzplatz);
     }
 
     @Override
