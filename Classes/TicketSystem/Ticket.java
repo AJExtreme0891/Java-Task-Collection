@@ -3,8 +3,8 @@ package Classes.TicketSystem;
 class Ticket {
     private int sitzplatz;
 
-    protected Ticket(int pSitzplatz) {
-        sitzplatz = pSitzplatz;
+    protected Ticket(int sitzplatz) {
+        this.sitzplatz = sitzplatz;
     }
 
     protected int getSitzplatz() {
