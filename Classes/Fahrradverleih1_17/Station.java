@@ -1,4 +1,4 @@
-package Classes.Fahrradverleih1_17;
+package Tasks.Classes.Fahrradverleih1_17;
 
 import java.util.ArrayList;
 
@@ -6,17 +6,19 @@ import java.util.ArrayList;
 class Station {
     protected ArrayList<Fahrrad> Storage = new ArrayList<Fahrrad>();
 
+    protected Station() {
+    }
 
 
-    protected Fahrrad leiheAus(){
-        for (Fahrrad f : Storage){
-            if (!(f.isRented())){
-                if (f instanceof EBikes){
-                    if(((EBikes) f).getBattery() >= 20){
+    protected Fahrrad leiheAus() {
+        for (Fahrrad f : Storage) {
+            if (!(f.isRented())) {
+                if (f instanceof EBikes) {
+                    if (((EBikes) f).getBattery() >= 20) {
                         f.setRented(true);
                         return f;
                     }
-                }else{
+                } else {
                     f.setRented(true);
                     return f;
                 }
@@ -25,27 +27,33 @@ class Station {
         return null;
     }
 
-    protected int anzahleruegbar(){
+    protected int anzahleruegbar() {
         int count = 0;
-        for (Fahrrad f : Storage){
-            if (!(f.isRented())){
+        for (Fahrrad f : Storage) {
+            if (!(f.isRented())) {
                 count++;
             }
         }
         return count;
     }
 
-    public EBikes sucheBestesEBike () {
+    public EBikes sucheBestesEBike() {
         EBikes bestes = null;
-        for ( Fahrrad f : Storage ) {
-             if (f instanceof EBikes && !f. isRented ()) {
-                 EBikes e = (EBikes) f;
-                 if (bestes == null
-                 || e. getBattery ()
-                 > bestes. getBattery ()) { bestes = e;
-                     }
+        for (Fahrrad f : Storage) {
+            if (f instanceof EBikes && !f.isRented()) {
+                EBikes e = (EBikes) f;
+                if (bestes == null || e.getBattery() > bestes.getBattery()) {
+                    bestes = e;
                 }
-             }
-         return bestes;
-         }
+            }
+        }
+        return bestes;
+    }
+
+    public ArrayList<Fahrrad> getStorage() {
+        return Storage;
+    }
+    public void addBike(Fahrrad fahrrad){
+        this.Storage.add(fahrrad);
+    }
 }

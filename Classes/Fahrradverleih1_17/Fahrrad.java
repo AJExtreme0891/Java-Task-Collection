@@ -1,4 +1,4 @@
-package Classes.Fahrradverleih1_17;
+package Tasks.Classes.Fahrradverleih1_17;
 
 class Fahrrad {
     private int idNumber;
@@ -15,7 +15,7 @@ class Fahrrad {
         return this.isRented;
     }
 
-
-
-
+    public int getIdNumber() {
+        return idNumber;
+    }
 }

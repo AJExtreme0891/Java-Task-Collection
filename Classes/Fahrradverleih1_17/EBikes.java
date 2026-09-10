@@ -1,4 +1,4 @@
-package Classes.Fahrradverleih1_17;
+package Tasks.Classes.Fahrradverleih1_17;
 
 class EBikes extends Fahrrad{
     private int battery;
