@@ -17,7 +17,7 @@ public class Sortierungsalgorithmen {
 
     public static void bubblesort(int[] f) {
         int hold = 0;
-        int index = 2;
+        int index = 1;
         boolean vertauscht;
         do {
             vertauscht = false;
