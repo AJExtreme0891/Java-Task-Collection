@@ -35,7 +35,7 @@ public class Sortierungsalgorithmen {
 
     public static void selectionsort(int[] f) {
 
-        for (int i = 0; i < f.length - 2; i++) {
+        for (int i = 0; i < f.length - 1; i++) {
             int minIndex = findSmallestInt(f, i);
             for (int j = 0; j + 1 < f.length - 1; j++) {
                 if (f[j] < f[minIndex]) {
