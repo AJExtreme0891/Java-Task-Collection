@@ -109,39 +109,24 @@ public class Sortierungsalgorithmen {
 
     public static int[] mixArrays(int[] a, int[] b) {
 
-        int[] result = new int[a.length + b.length];
+    int[] result = new int[a.length + b.length];
 
-        int ia = 0;
-        int ib = 0;
-        int i = 0;
+    int ia = 0;
+    int ib = 0;
 
-        while (ia < a.length && ib < b.length) {
+    for (int i = 0; i < result.length; i++) {
 
-            if (a[ia] <= b[ib]) {
-                result[i] = a[ia];
-                ia++;
-            } else {
-                result[i] = b[ib];
-                ib++;
-            }
-
-            i++;
-        }
-
-        while (ia < a.length) {
+        if (ib >= b.length || (ia < a.length && a[ia] <= b[ib])) {
             result[i] = a[ia];
             ia++;
-            i++;
-        }
-
-        while (ib < b.length) {
+        } else {
             result[i] = b[ib];
             ib++;
-            i++;
         }
-
-        return result;
     }
+
+    return result;
+}
 
 
 
