@@ -1,15 +1,17 @@
-package Tasks.SortierAlgorithmen;
+package Tasks.SortierUndSuchAlgorithmen;
 
+
+import java.util.Arrays;
 
 public class Hashtable2_10 {
     static Integer[] hashtable = new Integer[11];
 
     public static void main(String[] args) {
         int[] numbers = {2024, 1432, 2973, 3300, 4408, 1653};
-        for (int num : numbers){
+        for (int num : numbers) {
             addNumInHash(num);
         }
-
+        System.out.println(Arrays.toString(hashtable));
     }
 
     public static int calcKey(int key) {
@@ -23,12 +25,13 @@ public class Hashtable2_10 {
             System.out.println("Collision");
             index = (index + 1) % 11;
             hold++;
-            if (hold >= 13){
+            if (hold >= 17) {
                 break;
             }
         }
-        if (hold >= 13){
-        hashtable[index] = num;}
+        if (!(hold >= 17)) {
+            hashtable[index] = num;
+        }
     }
 
     public static int searchHash(int num) {
