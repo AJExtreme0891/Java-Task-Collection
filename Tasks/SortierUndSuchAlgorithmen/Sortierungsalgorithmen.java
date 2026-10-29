@@ -32,7 +32,7 @@ public class Sortierungsalgorithmen {
 
         int[] quick = numbers.clone();
         quicksort(quick, 0, (quick.length - 1));
-        System.out.println("Quick Sort:     " + Arrays.toString(merge));
+        System.out.println("Quick Sort:     " + Arrays.toString(quick));
     }
 
 
@@ -43,7 +43,7 @@ public class Sortierungsalgorithmen {
         do {
             vertauscht = false;
 
-            for (int i = 0; i < f.length - 1; i++) {
+            for (int i = 0; i < f.length - 1 -i ; i++) {
 
                 if (f[i] > f[i + 1]) {
                     vertausche(f, i);
@@ -109,24 +109,39 @@ public class Sortierungsalgorithmen {
 
     public static int[] mixArrays(int[] a, int[] b) {
 
-    int[] result = new int[a.length + b.length];
+        int[] result = new int[a.length + b.length];
 
-    int ia = 0;
-    int ib = 0;
+        int ia = 0;
+        int ib = 0;
+        int i = 0;
 
-    for (int i = 0; i < result.length; i++) {
+        while (ia < a.length && ib < b.length) {
 
-        if (ib >= b.length || (ia < a.length && a[ia] <= b[ib])) {
+            if (a[ia] <= b[ib]) {
+                result[i] = a[ia];
+                ia++;
+            } else {
+                result[i] = b[ib];
+                ib++;
+            }
+
+            i++;
+        }
+
+        while (ia < a.length) {
             result[i] = a[ia];
             ia++;
-        } else {
+            i++;
+        }
+
+        while (ib < b.length) {
             result[i] = b[ib];
             ib++;
+            i++;
         }
-    }
 
-    return result;
-}
+        return result;
+    }
 
 
 

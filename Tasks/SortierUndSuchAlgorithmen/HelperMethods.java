@@ -1,5 +1,7 @@
 package Tasks.SortierUndSuchAlgorithmen;
 
+import ExamPrep.Q1_First_Exam_Prep.Challenge3.Sensor;
+
 public class HelperMethods {
     public static int[] frontHalfOfF(int[] f) {
 
@@ -25,6 +27,31 @@ public class HelperMethods {
 
         return result;
     }
+    public static Sensor[] frontHalfOfF(Sensor[] f) {
+
+        int mitte = f.length / 2;
+        Sensor[] result = new Sensor[mitte];
+
+        for (int i = 0; i < mitte; i++) {
+            result[i] = f[i];
+        }
+
+        return result;
+    }
+
+
+    public static Sensor[] backHalfOfF(Sensor[] f) {
+
+        int mitte = f.length / 2;
+        Sensor[] result = new Sensor[f.length - mitte];
+
+        for (int i = mitte; i < f.length; i++) {
+            result[i - mitte] = f[i];
+        }
+
+        return result;
+    }
+
 
 
 
@@ -76,6 +103,21 @@ public class HelperMethods {
     public static void vertausche(int[] f, int i, int j) {
 
         int hold = f[i];
+        f[i] = f[j];
+        f[j] = hold;
+    }
+
+    public static void vertausche(Sensor[] f, int i) {
+
+        Sensor hold = f[i];
+        f[i] = f[i + 1];
+        f[i + 1] = hold;
+    }
+
+
+    public static void vertausche(Sensor[] f, int i, int j) {
+
+        Sensor hold = f[i];
         f[i] = f[j];
         f[j] = hold;
     }
