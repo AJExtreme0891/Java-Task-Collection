@@ -1,6 +1,6 @@
 package Tasks.Classes.MicsClasses;
 
-public class Konto {
+public class Konto implements Comparable<Konto>{
     private String inhaber;
     private double kontostand;
 
@@ -19,4 +19,19 @@ public class Konto {
             this.kontostand += payment;
         }
     }
+
+    public double getKontostand() {
+        return kontostand;
+    }
+
+    public String getInhaber() {
+        return inhaber;
+    }
+
+    @Override
+        public int compareTo(Konto konto) {
+            return Double.compare(this.kontostand, konto.kontostand);
+        }
+
+
 }
