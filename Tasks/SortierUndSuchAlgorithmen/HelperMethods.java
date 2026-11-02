@@ -1,8 +1,10 @@
 package Tasks.SortierUndSuchAlgorithmen;
 
+import Tasks.Classes.MicsClasses.Konto;
 import ExamPrep.Q1_First_Exam_Prep.Challenge3.Sensor;
 
 public class HelperMethods {
+    //num
     public static int[] frontHalfOfF(int[] f) {
 
         int mitte = f.length / 2;
@@ -14,8 +16,6 @@ public class HelperMethods {
 
         return result;
     }
-
-
     public static int[] backHalfOfF(int[] f) {
 
         int mitte = f.length / 2;
@@ -27,6 +27,9 @@ public class HelperMethods {
 
         return result;
     }
+
+    //Sensor
+
     public static Sensor[] frontHalfOfF(Sensor[] f) {
 
         int mitte = f.length / 2;
@@ -53,6 +56,31 @@ public class HelperMethods {
     }
 
 
+    //Sensor
+    public static Konto[] frontHalfOfF(Konto[] f) {
+
+        int mitte = f.length / 2;
+        Konto[] result = new Konto[mitte];
+
+        for (int i = 0; i < mitte; i++) {
+            result[i] = f[i];
+        }
+
+        return result;
+    }
+
+
+    public static Konto[] backHalfOfF(Konto[] f) {
+
+        int mitte = f.length / 2;
+        Konto[] result = new Konto[f.length - mitte];
+
+        for (int i = mitte; i < f.length; i++) {
+            result[i - mitte] = f[i];
+        }
+
+        return result;
+    }
 
 
     public static int[] mixArrays(int[] a, int[] b) {
@@ -122,6 +150,25 @@ public class HelperMethods {
         f[j] = hold;
     }
 
+
+
+
+    public static void vertausche(Konto[] f, int i) {
+
+        Konto hold = f[i];
+        f[i] = f[i + 1];
+        f[i + 1] = hold;
+    }
+
+
+    public static void vertausche(Konto[] f, int i, int j) {
+
+        Konto hold = f[i];
+        f[i] = f[j];
+        f[j] = hold;
+    }
+
+
     public static void vertausche(String[] f, int i) {
 
         String hold = f[i];
@@ -161,6 +208,8 @@ public class HelperMethods {
 
         return result;
     }
+
+
 
 
 

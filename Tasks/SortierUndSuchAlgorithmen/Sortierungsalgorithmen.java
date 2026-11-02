@@ -101,10 +101,8 @@ public class Sortierungsalgorithmen {
         int[] leftHalf = frontHalfOfF(f);
         int[] rightHalf = backHalfOfF(f);
 
-        leftHalf = mergesort(leftHalf);
-        rightHalf = mergesort(rightHalf);
 
-        return mixArrays(leftHalf, rightHalf);
+        return mixArrays(mergesort(leftHalf), mergesort(rightHalf));
     }
 
     public static int[] mixArrays(int[] a, int[] b) {
@@ -140,6 +138,16 @@ public class Sortierungsalgorithmen {
             i++;
         }
 
+
+//        for (int j = 0; j < result.length; j++) {
+//            if (ib >= b.length || (ia < a.length && a[ia] <= b[ib]) ){
+//                result[j] = a[ia];
+//                ia++;
+//            }else {
+//                result[j] = b[ib];
+//                ib++;
+//            }
+//        }
         return result;
     }
 
