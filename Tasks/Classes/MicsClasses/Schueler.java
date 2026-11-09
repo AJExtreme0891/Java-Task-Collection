@@ -1,16 +1,22 @@
 package Tasks.Classes.MicsClasses;
 
-public class Schueler {
+public class Schueler{
 
 
     private String name, klasse;
     private int alter;
+    private int grade;
 
 
     public Schueler(String name, String klasse, int alter) {
         this.name = name;
         this.alter = alter;
         this.klasse = klasse;
+    }
+    public Schueler(String name, int alter, int grade){
+        this.name = name;
+        this.alter = alter;
+        this.grade = grade;
     }
 
     public String getName() {
@@ -19,6 +25,10 @@ public class Schueler {
 
     public String getKlasse() {
         return this.klasse;
+    }
+
+    public int getGrade(){
+        return this.grade;
     }
 
     public int getAlter() {
@@ -30,4 +40,6 @@ public class Schueler {
             this.alter = alter;
         }
     }
+
+
 }
